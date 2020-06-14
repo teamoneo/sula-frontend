@@ -1,19 +1,26 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StatusBar } from 'react-native';
+
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+import { NavigationContainer } from '@react-navigation/native';
+
+import Routes from './src/routes/index.routes';
+
+const client = new ApolloClient({
+  uri: 'https://graphql-ccr.herokuapp.com'
+});
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <ApolloProvider client={client}>
+        <NavigationContainer>
+          <StatusBar barStyle="dark-content" backgroundColor="#E9ECF5" />
+          <Routes />
+        </NavigationContainer>
+    </ApolloProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

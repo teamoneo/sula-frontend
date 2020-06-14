@@ -2,27 +2,33 @@
   "expo": {
     "name": "sula",
     "slug": "sula",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0E2453"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.oneo.sula",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBHSZm3aNGp7WFN85RkKF1bF5mewAuRHPY"
+        }
+      }
+    },
     "ios": {
       "supportsTablet": true
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#0E2453"
     }
   }
 }

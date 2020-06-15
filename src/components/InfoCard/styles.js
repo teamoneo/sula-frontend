@@ -10,7 +10,6 @@ export const Container = styled.View`
 `;
 
 export const InfoContent = styled.TouchableOpacity`
-  flex-direction: column;
   max-width: 65%;
 `;
 

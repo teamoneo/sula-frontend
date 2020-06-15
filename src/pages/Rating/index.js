@@ -6,7 +6,7 @@ import { gql } from 'apollo-boost';
 
 import { ActivityIndicator} from 'react-native';
 
-  import * as Unicons from '@iconscout/react-native-unicons';
+import * as Unicons from '@iconscout/react-native-unicons';
 
 import PopUpRating from '../../components/PopUpRating';
 
@@ -123,10 +123,15 @@ export default function Rating() {
 
     if (Object(data).getFeedback) {
       setFeedbacks(data.getFeedback.map(item => {
-        if (item.a)
-      });
+          const userMatch = users.filter((user) => {
+            return (user.id === item.author_id)
+          })[0];
+          if (userMatch) {
+            item.author_id = userMatch.name;
+          }
+        return item;
+      }));
     }
-
   }, [feedbackQuery]);
 
   if (loading === true) {

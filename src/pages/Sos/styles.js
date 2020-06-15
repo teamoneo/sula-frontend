@@ -31,7 +31,9 @@ export const CardNumbers = styled(LinearGradient)`
 export const Title = styled.Text`
   color:#FFFFFF;
   font-size:32px;
-  text-align:right;
+  text-align:left;
+  padding-left:10%;
+  margin-top:62px;
 `;
 
 export const SosNumber = styled.Text`

@@ -19,12 +19,11 @@ export default function InfoCard({ detailInfo, rating }) {
       <InfoContent onPress={detailInfo} >
         <InfoOwner info={rating} />
         <InfoDetail>
-          <DetailTitle numberOfLines={1} ellipsizeMode='tail'>{rating.title}</DetailTitle>
-          <DetailText numberOfLines={2} ellipsizeMode='tail'>{rating.description}</DetailText>
+          <DetailTitle numberOfLines={1} ellipsizeMode='tail'>{rating.subject}</DetailTitle>
+          <DetailText numberOfLines={2} ellipsizeMode='tail'>{rating.body}</DetailText>
         </InfoDetail>
-
-        <ActionDetail color={rating.value} isClicked={rating.isClicked} likesNumber={rating.like} />
       </InfoContent>
+      <ActionDetail color={rating.value} isClicked={rating.isClicked} likesNumber={rating.like_count} />
     </Container>
   );
 }

@@ -49,16 +49,46 @@ export default function Map(){
               latitudeDelta: 0.014,
               longitudeDelta: 0.014,
             }}
-        >
-
+          >
           <Marker 
             coordinate={{ latitude: -23.313816, longitude: -51.156679}}
-            onPress={() => setVisiblePopUpMarker(true)} 
-          >
+            onPress={() => setVisiblePopUpMarker(true)} >
             <View>
-              <Unicons.UilMapMarkerMinus size={40} color="#F1554C" />
+              <Unicons.UilMapMarkerMinus size={40} color="#2E6A9D" />
             </View>
           </Marker>
+          <Marker 
+            coordinate={{ latitude: -23.313049, longitude: -51.154802}}
+            onPress={() => setVisiblePopUpMarker(true)} >
+            <View>
+              <Unicons.UilMapMarkerMinus size={40} color="#2E6A9D" />
+            </View>
+          </Marker>
+
+          <Marker 
+            coordinate={{ latitude: -23.310861, longitude: -51.156510}}
+            onPress={() => setVisiblePopUpMarker(true)} >   
+            <View>
+              <Unicons.UilMapMarkerMinus size={40} color="#2E6A9D" />
+            </View>
+          </Marker>
+
+          <Marker 
+            coordinate={{ latitude: -23.592529,longitude: -46.690168}}
+            onPress={() => setVisiblePopUpMarker(true)} >          
+            <View>
+              <Unicons.UilMapMarkerMinus size={40} color="#2E6A9D" />
+            </View>
+          </Marker>
+
+          <Marker 
+            coordinate={{ latitude: -23.273204, longitude: -51.185871}}
+            onPress={() => setVisiblePopUpMarker(true)} >          
+            <View>
+              <Unicons.UilMapMarkerMinus size={40} color="#2E6A9D" />
+            </View>
+          </Marker>
+
         </MapView>
         ) : (
           <ActivityIndicator style={{ alignSelf: "center" }} size="large" color="#0E2453" />
@@ -67,15 +97,15 @@ export default function Map(){
     </View>
     {visiblePopUpMarker && (
         <PopUp>
-          <PopUpContent>
+          <PopUpContent onPress={() => setVisiblePopUpMarker(false)}>
             <InfoContentMap>
-              <InfoOwner info={{ author_id: 'João Câmara', value: false, created_at: null }}>
-                <Stars total={4} />
+              <InfoOwner info={{ author_id: 'João Câmara', value: true, created_at: null }}>
+                <Stars total={5} />
               </InfoOwner>
               <BestCommentTitle>Melhor Comentário</BestCommentTitle>
               <BestCommentDescription>Galera, passei aqui no Estrada para Saúde do CCR...</BestCommentDescription>
             </InfoContentMap>
-            <ActionDetail color={false} isClicked={true} likesNumber={4} />
+            <ActionDetail  color={true} isClicked={true} likesNumber={82} />
           </PopUpContent>
         </PopUp>
     )}

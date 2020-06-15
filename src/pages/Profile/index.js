@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import { Text, View, ActivityIndicator } from 'react-native';
-import {Container, Card, IconBox, SeeLaws, Title, Line1, ButtonText, TextButtonArea, CardTitle} from './styles';
+import {Container, Card, IconBox, SeeLaws, Title, Line1, ButtonText, TextButtonArea, EditButton, CardTitle, IconLetter, EditBox} from './styles';
 import InfoCard from '../../components/InfoCard';
 
 import * as Unicons from '@iconscout/react-native-unicons';
@@ -32,16 +32,25 @@ export default function Profile() {
 
   return(
     <Container>
+
       <Title>Perfil</Title>
-      <Card>
-        <IconBox>
-          <CardTitle>L</CardTitle>
-        </IconBox>
-        <CardTitle>Luiz Henrique</CardTitle>
-      </Card>
-      <Card>
+
+      <Card direction="row">
         <Line1>
-          <IconBox>
+          <IconBox color="#2E6A9D">
+            <IconLetter>L</IconLetter>
+          </IconBox>
+          <CardTitle>Luiz Henrique</CardTitle>
+        </Line1>
+        <EditButton color="#E9ECF5">
+          <Unicons.UilPen color="#2E6A9D" size={37} />
+          <ButtonText style={{fontSize:16,color:"#2E6A9D"}}>Editar</ButtonText>
+        </EditButton>
+      </Card>
+
+      <Card direction="column">
+        <Line1>
+          <IconBox color="#FFBC55">
             <Unicons.UilBooks color="#fff" size={45} />
           </IconBox>
           <CardTitle>Ver Direitos do Caminhoneiro</CardTitle>
@@ -53,6 +62,7 @@ export default function Profile() {
           </TextButtonArea>
         </SeeLaws>
       </Card>
+
     </Container>
   );
 }

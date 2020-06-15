@@ -18,7 +18,8 @@ export const BestCommentDescription = styled.Text`
   color: #A0A0A2;
 `;
 
-export const PopUpContent = styled.View`
+export const PopUpContent = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
 `;
+

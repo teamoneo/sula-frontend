@@ -6,7 +6,7 @@ export const Container = styled.View`
 `;
 
 export const Card = styled.View`
-  flex-direction: column;
+  flex-direction: ${(props) => props.direction};
   justify-content: space-between;
   border-radius: 10px;
   padding: 20px;
@@ -16,12 +16,24 @@ export const Card = styled.View`
 
 export const IconBox = styled.View`
   width: 54px;
-  height: 54px;
+  min-height: 54px;
   align-items:center;
   justify-content:center;
   border-radius:15px;
   align-items: center;
-  background-color:#FFBC55;
+  background-color: ${(props) => props.color};
+`;
+
+export const EditButton = styled.TouchableOpacity`
+  width:75px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 54px;
+  align-items:center;
+  justify-content:center;
+  border-radius:15px;
+  align-items: center;
+  background-color: ${(props) => props.color};
 `;
 
 export const SeeLaws = styled.TouchableOpacity`
@@ -44,7 +56,6 @@ export const Title = styled.Text`
 
 export const Line1 = styled.View`
   align-items:center;
-  justify-content:space-between;
   flex-direction:row;
 `;
 
@@ -59,6 +70,19 @@ export const TextButtonArea = styled.View`
 `;
 
 export const CardTitle = styled.Text`
-  margin-right:10%;
+  align-items:center;
+  margin-left:5%;
   font-size:14px;
+`;
+
+export const IconLetter = styled.Text`
+  font-size:32px;
+  color:#fff;
+`;
+
+export const EditBox = styled.View`
+  background-color:#2E6A9D;
+  width:50px;
+  height:50px;
+  align-items:
 `;
